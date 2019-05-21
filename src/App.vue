@@ -10,7 +10,7 @@
             class="mr-3"
             large
           >mdi-account-supervisor-circle</v-icon>
-          <span class="font-weight-light">TESTE SUA</span>
+            <span class="font-weight-light">TESTE SUA</span>
           <span> ÉTICA</span>
         </v-toolbar-title>
       </v-toolbar>
