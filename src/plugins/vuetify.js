@@ -5,8 +5,8 @@ import pt from 'vuetify/es5/locale/pt'
 
 Vue.use(Vuetify, {
   theme: {
-    primary: '#ee44aa',
-    secondary: '#424242',
+    primary: '#26C6DA',
+    secondary: '#01579B',
     accent: '#82B1FF',
     error: '#FF5252',
     info: '#2196F3',
@@ -17,5 +17,5 @@ Vue.use(Vuetify, {
   lang: {
     locales: { pt },
     current: 'pt'
-  },
+  }
 })
