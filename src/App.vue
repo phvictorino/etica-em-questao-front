@@ -1,20 +1,6 @@
 <template>
   <div id="main">
     <v-app>
-      <v-toolbar
-        color="primary"
-        app
-      >
-        <v-toolbar-title class="headline text-uppercase">
-          <v-icon
-            class="mr-3"
-            large
-          >mdi-account-supervisor-circle</v-icon>
-            <span class="font-weight-light">TESTE SUA</span>
-          <span> ÉTICA</span>
-        </v-toolbar-title>
-      </v-toolbar>
-
       <v-content>
         <router-view />
       </v-content>
@@ -53,5 +39,13 @@ export default {
   height: 100%;
   opacity: 0.2;
   z-index: -1;
+}
+
+.rounded-card-5 {
+  border-radius: 5px
+}
+
+.rounded-card-10 {
+  border-radius: 10px
 }
 </style>
