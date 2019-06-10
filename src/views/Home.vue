@@ -11,8 +11,8 @@
       </v-card>
       <v-card class="elevation-10 rounded-card-10 py-5">
         <v-card-text class="text-xs-center">
-          <p class="title">Qual o resultado da sua auto reflexão quando você pensa em ética?</p>
-          <p class="title">Você se acha realmente <b>ético?</b></p>
+          <p class="title">O que é certo ou errado quando você está no computador?</p>
+          <p class="title">Você se acha realmente <b>ético</b>?</p>
         </v-card-text>
         <v-card-actions>
           <v-layout justify-center>
