@@ -4,7 +4,7 @@
       align-center
       justify-center
     >
-      <v-flex xs6>
+      <v-flex lg6 sm10>
         <v-card dark class="round-15 mb-3">
           <v-card-title>
             <v-icon color="#AB47BC" class="display-1">mdi-test-tube</v-icon><span class="title">Instruções</span>
