@@ -1,7 +1,11 @@
 import api from './api-service'
 
 const create = (answer) => {
-  return api.post('answer', answer)
+  return api().post('answers', answer)
 }
 
-export { create }
+const findOne = (id) => {
+  return api().get('answers/' + id)
+}
+
+export { create, findOne }

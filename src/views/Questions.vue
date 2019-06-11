@@ -5,12 +5,15 @@
       justify-center
     >
       <v-flex lg6 sm10>
-        <v-card dark class="round-15 mb-3">
+        <v-card dark class="round-15 mb-3 elevation-10">
           <v-card-title>
             <v-icon color="#AB47BC" class="display-1">mdi-test-tube</v-icon><span class="title">Instruções</span>
           </v-card-title>
-          <v-card-text>
-            <span>- Seja sincero!</span>
+          <v-card-text class="subheading">
+            <p>- São 20 questões aleatórias;</p>
+            <p>- Clique em 1 alternativa por questão;</p>
+            <p>- Seja sincero;</p>
+            <p>- Ao final, clique no botão ENVIAR localizado no final da página.</p>
           </v-card-text>
         </v-card>
         <v-card
@@ -18,9 +21,9 @@
           :key="q._id"
           class="mb-3 round-15"
         >
-          <v-card-title>{{(i+1) + ' - ' + q.question}}</v-card-title>
+          <v-card-title>Questão {{(i+1) + ' - ' + q.question}}</v-card-title>
           <v-card-text>
-            <v-radio-group v-model="answer.value">
+            <v-radio-group v-model="answers[i]">
               <v-radio
                 v-for="o in q.options"
                 :key="o._id"
@@ -31,7 +34,7 @@
           </v-card-text>
         </v-card>
         <v-layout justify-end>
-          <v-btn color="primary" @click="submit">Enviar</v-btn>
+          <v-btn round large dark color="#AB47BC" @click="submit">Enviar</v-btn>
         </v-layout>
       </v-flex>
     </v-layout>
@@ -44,7 +47,7 @@ import { create } from '@/services/answers-service'
 export default {
   data: () => ({
     questions: [],
-    answer: {}
+    answers: []
   }),
   methods: {
     async find () {
@@ -57,7 +60,10 @@ export default {
     },
     async submit () {
       try {
-        await create(this.answer)
+        let sum = 0
+        this.answers.forEach(a => (sum = a + sum))
+        let response = await create({ total: sum })
+        this.$router.push({ path: '/finish', query: { id: response.data._id } })
       } catch (error) {
         console.log(error)
       }
