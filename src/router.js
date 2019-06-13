@@ -9,6 +9,12 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '*', // or '/index.html'
+      beforeEnter: (to, from, next) => {
+        next('/')
+      }
+    },
+    {
       path: '/',
       name: 'home',
       component: Home
