@@ -28,7 +28,7 @@
                 v-for="o in q.options"
                 :key="o._id"
                 :label="o.description"
-                :value="o.value"
+                :value="o"
               ></v-radio>
             </v-radio-group>
           </v-card-text>
@@ -61,7 +61,7 @@ export default {
     async submit () {
       try {
         let sum = 0
-        this.answers.forEach(a => (sum = a + sum))
+        this.answers.forEach(a => (sum = a.value + sum))
         let response = await create({ total: sum })
         this.$router.push({ path: '/finish', query: { id: response.data._id } })
       } catch (error) {
