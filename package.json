@@ -19,6 +19,7 @@
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vue-toasted": "^1.1.27",
+    "vuejs-noty": "^0.1.3",
     "vuetify": "^1.5.5",
     "vuex": "^3.0.1"
   },

@@ -60,12 +60,19 @@ export default {
     },
     async submit () {
       try {
+        if (!this.valid()) return
         let sum = 0
         this.answers.forEach(a => (sum = a.value + sum))
         let response = await create({ total: sum })
         this.$router.push({ path: '/finish', query: { id: response.data._id } })
       } catch (error) {
         console.log(error)
+      }
+    },
+    valid () {
+      if (this.answers.length < 10) {
+        this.$noty.error('Erro: Você precisa responder as 10 questões')
+        return false
       }
     }
   },
