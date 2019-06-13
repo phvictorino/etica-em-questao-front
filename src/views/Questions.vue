@@ -74,6 +74,7 @@ export default {
         this.$noty.error('Erro: Você precisa responder as 10 questões')
         return false
       }
+      return true
     }
   },
   created () {
