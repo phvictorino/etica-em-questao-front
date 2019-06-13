@@ -8,12 +8,7 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    {
-      path: '*', // or '/index.html'
-      beforeEnter: (to, from, next) => {
-        next('/')
-      }
-    },
+
     {
       path: '/',
       name: 'home',
@@ -41,6 +36,12 @@ export default new Router({
       path: '/stats',
       name: 'stats',
       component: () => import(/* webpackChunkName: "about" */ './views/Stats.vue')
+    },
+    {
+      path: '*', // or '/index.html'
+      beforeEnter: (to, from, next) => {
+        next('/')
+      }
     }
   ]
 })
