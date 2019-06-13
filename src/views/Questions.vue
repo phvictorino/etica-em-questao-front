@@ -10,7 +10,7 @@
             <v-icon color="#AB47BC" class="display-1">mdi-test-tube</v-icon><span class="title">Instruções</span>
           </v-card-title>
           <v-card-text class="subheading">
-            <p>- São 20 questões aleatórias;</p>
+            <p>- São 10 questões aleatórias;</p>
             <p>- Clique em 1 alternativa por questão;</p>
             <p>- Seja sincero;</p>
             <p>- Ao final, clique no botão ENVIAR localizado no final da página.</p>
@@ -71,7 +71,7 @@ export default {
     },
     valid () {
       if (this.answers.length < 10) {
-        this.$noty.error('Erro: Você precisa responder as 10 questões')
+        this.$noty.error('Erro: Você precisa responder todas as questões')
         return false
       }
       return true
