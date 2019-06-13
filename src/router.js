@@ -30,6 +30,11 @@ export default new Router({
       path: '/finish',
       name: 'finish',
       component: () => import(/* webpackChunkName: "about" */ './views/Finish.vue')
+    },
+    {
+      path: '/stats',
+      name: 'stats',
+      component: () => import(/* webpackChunkName: "about" */ './views/Stats.vue')
     }
   ]
 })
